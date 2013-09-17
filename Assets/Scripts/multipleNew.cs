@@ -62,7 +62,7 @@ public class multipleNew : MonoBehaviour {
 		LineRenderer lr = (LineRenderer)tempObject.AddComponent(typeof(LineRenderer));	
 		lr.SetWidth(0.4f, 0.4f);
 		lr.SetPosition(0, v3StartPosition);
-		//lr.SetPosition(1, v3EndPosition);
+		lr.SetPosition(1, v3EndPosition);
 	}
 	
 	private void changeDirection(string inDirection)
