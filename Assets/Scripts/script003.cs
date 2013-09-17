@@ -1,19 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class script002 : MonoBehaviour
+public class script003 : MonoBehaviour
 {
 	private float startPosX = 0f;
 	private float startPosY = 0f;	
 	private float endPosX = 1f;
 	private float endPosY = 0f;
 	private GameObject myGameObject;	
+	private GameObject tempGameObject;	
 	private	int myObjectCount = 0;
 	private LineRenderer myLineRenderer;
+	private LineRenderer tempLineRenderer;
 	private string currentDirection;
 	private string myObjectName;
 	private Vector3 v3StartPosition;
 	private Vector3 v3EndPosition;	
+	
+	private float radius = 2.0f;
+	private int vertexCount = 130;	
 	
 	void Start ()
 	{		
@@ -23,7 +28,38 @@ public class script002 : MonoBehaviour
 		
 		createNewObject();
 		drawLine();
+		
+		drawCircle();
 	}
+	
+	
+	
+	void drawCircle()
+	{
+		tempGameObject = new GameObject();
+		tempGameObject.name = "myCircle";	
+		
+		tempLineRenderer = (LineRenderer)tempGameObject.AddComponent(typeof(LineRenderer));
+		tempLineRenderer.SetWidth(0.8f, 0.8f);
+		
+		tempLineRenderer.material = new Material(Shader.Find("Particles/Additive"));		
+		Color c1 = Color.yellow;
+		Color c2 = Color.red;
+		tempLineRenderer.SetColors(c1, c2);		
+    	tempLineRenderer.SetVertexCount(vertexCount + 1);
+		
+		for(int i = 0; i < vertexCount + 1; i++)
+ 		{		
+			float angle = i;
+			float tempi = i;
+			tempi = (tempi / vertexCount) * Mathf.PI * 2;
+			
+			Vector3 pos = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * radius;
+			tempLineRenderer.SetPosition(i, pos);
+    	}
+	}
+	
+	
 	
 	void randomiseStartDirection()
 	{
