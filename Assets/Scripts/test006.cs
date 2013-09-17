@@ -5,47 +5,56 @@ public class test006 : MonoBehaviour
 {
 	private GameObject myGameObject;
 	private LineRenderer myLineRenderer;
-	
 	private Vector3 v3StartPosition;
 	private Vector3 v3EndPosition;
 	
-	//private float myX = 20;
-	//private float myY = 20;
-
-	// Use this for initialization
+	private	int myObjectCount = 0;
+	private string myObjectName;
+	
+	private float myX = 10f;
+	private float myY = 10f;
+	
 	void Start ()
-	{
-		myGameObject = new GameObject();
-		myGameObject.name = "object001";		
+	{		
+		createNewObject();
 	
 		v3StartPosition.Set(0f, 0f, 0f);
-		v3EndPosition.Set(10f, 10f, 0f);
+		v3EndPosition.Set(myX, myY, 0f);
 		
 		myLineRenderer = (LineRenderer)myGameObject.AddComponent(typeof(LineRenderer));	
 		myLineRenderer.SetWidth(0.4f, 0.4f);
 		myLineRenderer.SetPosition(0, v3StartPosition);
 		myLineRenderer.SetPosition(1, v3EndPosition);	
+		
+				Debug.Log("start");
 	}
-	
-	// Update is called once per frame
+
 	void Update ()
 	{
-		//myX = myX + 10;
-		//myY = myY + 10;
+		myX++;
+		myY++;
 		
-		//Debug.Log(myX);
+		if (Input.GetKeyDown("space"))
+		{
+			GameObject tempObject = createNewObject();			
+			LineRenderer myLineRenderer = (LineRenderer)tempObject.AddComponent(typeof(LineRenderer));
+			myLineRenderer.SetWidth(0.4f, 0.4f);
+			v3StartPosition.Set(myX, myY, 0f);
+		}	
 		
-		myGameObject = GameObject.Find("myGameObject");
-		
-		myLineRenderer = myGameObject.GetComponent<LineRenderer>();
-		
-		
-		
-		v3StartPosition.Set(20f, 20f, 0f);
-		v3EndPosition.Set(30f, 30f, 0f);
-		
-		myLineRenderer.SetWidth(0.4f, 0.4f);
+		v3EndPosition.Set(myX, myX, 0f);
 		myLineRenderer.SetPosition(0, v3StartPosition);
 		myLineRenderer.SetPosition(1, v3EndPosition);
+	}
+	
+	GameObject createNewObject()
+	{
+		myObjectName = "object" + myObjectCount.ToString();
+
+		myGameObject = new GameObject();
+		myGameObject.name = myObjectName;		
+		myObjectCount++;
+		
+		return myGameObject;
 	}
 }
