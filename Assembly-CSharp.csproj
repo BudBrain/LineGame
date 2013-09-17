@@ -37,24 +37,15 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\line001.cs" />
-     <Compile Include="Assets\Scripts\line005.cs" />
-     <Compile Include="Assets\Scripts\lineController.cs" />
-     <Compile Include="Assets\Scripts\lineWave.cs" />
-     <Compile Include="Assets\Scripts\multiple (another copy).cs" />
-     <Compile Include="Assets\Scripts\multiple (copy).cs" />
-     <Compile Include="Assets\Scripts\multiple.cs" />
-     <Compile Include="Assets\Scripts\multiple002.cs" />
-     <Compile Include="Assets\Scripts\multipleNew.cs" />
-     <Compile Include="Assets\Scripts\multipleworks.cs" />
-     <Compile Include="Assets\Scripts\test006.cs" />
+     <Compile Include="Assets\Scripts\script001.cs" />
+     <Compile Include="Assets\Scripts\script002.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,17 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\test006.cs">
-    <Files>
-      <File FileName="Assets\Scripts\test006.cs" Line="44" Column="3" />
-      <File FileName="Assets\Scripts\multipleNew.cs" Line="57" Column="45" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="test006.cs" selected="True" />
+                <Node name="script002.cs" selected="True" />
               </Node>
             </Node>
           </Node>
